@@ -3,141 +3,346 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Above2000m Tea Products - Premium Nepali High-Altitude Tea</title>
+    <title>Above2000m — Premium Himalayan Tea</title>
     <meta name="description" content="Discover the finest premium high-altitude teas from Nepal. Above2000m Tea Products offers Orthodox Black, Himalayan Green, Oolong, and hand-rolled teas.">
     <link rel="icon" type="image/png" href="AboveFavicon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-
 </head>
 <body>
 
+    <!-- CURSOR -->
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-dot" id="cursor-dot"></div>
+
+    <!-- LOADER -->
+    <div class="page-loader" id="loader">
+        <div class="loader-content">
+            <img src="AboveFavicon.png" alt="Above2000m" class="loader-icon">
+            <div class="loader-line"></div>
+            <span class="loader-text">Above 2000m</span>
+        </div>
+    </div>
+
     <header id="header">
         <nav class="container nav-bar">
-            <a href="#" class="logo">
-                <img src="AboveLogo.svg" alt="Above2000m Logo" height="50">
+            <a href="#hero" class="logo">
+                <img src="AboveLogo.svg" alt="Above2000m Logo" height="44">
             </a>
-            <ul class="nav-links">
-                <li><a href="#hero">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#products">Products</a></li>
-                <li><a href="#gallery">Gallery</a></li>
-                <li><a href="#leadership">Leadership</a></li>
-                <li><a href="#contact">Contact</a></li>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#hero" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#products" class="nav-link">Products</a></li>
+                <li><a href="#gallery" class="nav-link">Gallery</a></li>
+                <li><a href="#leadership" class="nav-link">Leadership</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
-            <a href="#products" class="btn btn-primary">Shop Teas</a>
-            <div class="hamburger">
+            <a href="#products" class="btn btn-primary nav-cta">Shop Teas</a>
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
                 <span></span><span></span><span></span>
-            </div>
+            </button>
         </nav>
     </header>
 
     <main>
+        <!-- HERO -->
         <section id="hero">
-            <div class="hero-overlay"></div>
-            <div class="container hero-content reveal">
-                <img src="icon.png" alt="Tea Icon" class="hero-icon">
-                <h1>A sip of the above 2000m.</h1>
-                <p>Artisanal teas cultivated in the pristine altitudes of the Himalayas.</p>
-                <div class="hero-buttons">
+            <div class="hero-bg">
+                <img src="bg2.jpeg" alt="Himalayan Tea Garden" class="hero-img" loading="eager">
+                <div class="hero-overlay"></div>
+                <div class="hero-noise"></div>
+            </div>
+            <div class="container hero-content">
+                <div class="hero-badge reveal-up">
+                    <span class="badge-dot"></span>
+                    <span>Est. High Altitude, Nepal</span>
+                </div>
+                <h1 class="hero-headline reveal-up">
+                    <span class="line">A sip of the</span>
+                    <em class="line italic-line">above 2000m.</em>
+                </h1>
+                <p class="hero-sub reveal-up">Artisanal teas cultivated in the pristine<br>altitudes of the Himalayas.</p>
+                <div class="hero-actions reveal-up">
                     <a href="#products" class="btn btn-primary">Explore Our Teas</a>
-                    <a href="#about" class="btn btn-secondary">Our Heritage</a>
+                    <a href="#about" class="btn btn-ghost">Our Heritage ↓</a>
+                </div>
+            </div>
+            <div class="hero-scroll-hint">
+                <span>Scroll</span>
+                <div class="scroll-line"></div>
+            </div>
+            <div class="hero-altitude-badge">
+                <div class="alt-badge-inner">
+                    <span class="alt-num">2000</span>
+                    <span class="alt-unit">m+</span>
+                    <span class="alt-label">Altitude</span>
                 </div>
             </div>
         </section>
 
-        <section id="about" class="section-padding container">
-            <div class="about-grid reveal">
-                <div class="about-text">
-                    <span class="subtitle">Est. High Altitude</span>
-                    <h2>Our Heritage</h2>
-                    <p><strong>Above2000m Tea Products Pvt Ltd</strong> produces premium high-altitude teas where the air is thin and the flavor is concentrated.</p>
-                    <p>Every leaf is hand-plucked at the peak of freshness, honoring Himalayan traditions that date back generations.</p>
+        <!-- MARQUEE STRIP -->
+        <div class="marquee-strip">
+            <div class="marquee-track">
+                <span>Orthodox Black Tea</span><span class="sep">✦</span>
+                <span>Himalayan Green</span><span class="sep">✦</span>
+                <span>Oolong Tea</span><span class="sep">✦</span>
+                <span>Hand-Rolled Artisan</span><span class="sep">✦</span>
+                <span>Premium Nepal Origin</span><span class="sep">✦</span>
+                <span>Orthodox Black Tea</span><span class="sep">✦</span>
+                <span>Himalayan Green</span><span class="sep">✦</span>
+                <span>Oolong Tea</span><span class="sep">✦</span>
+                <span>Hand-Rolled Artisan</span><span class="sep">✦</span>
+                <span>Premium Nepal Origin</span><span class="sep">✦</span>
+            </div>
+        </div>
+
+        <!-- ABOUT -->
+        <section id="about" class="section-padding">
+            <div class="container about-container">
+                <div class="about-text reveal-left">
+                    <span class="eyebrow">Our Heritage</span>
+                    <h2>Where altitude<br><em>shapes every leaf.</em></h2>
+                    <p>Above2000m Tea Products Pvt Ltd produces premium high-altitude teas where the air is thin and the flavor is concentrated. Every leaf is hand-plucked at the peak of freshness, honoring Himalayan traditions that date back generations.</p>
+                    <div class="about-stats">
+                        <div class="stat">
+                            <span class="stat-num">2000<sup>m+</sup></span>
+                            <span class="stat-label">Altitude Grown</span>
+                        </div>
+                        <div class="stat-divider"></div>
+                        <div class="stat">
+                            <span class="stat-num">100<sup>%</sup></span>
+                            <span class="stat-label">Hand Plucked</span>
+                        </div>
+                        <div class="stat-divider"></div>
+                        <div class="stat">
+                            <span class="stat-num">4</span>
+                            <span class="stat-label">Rare Varieties</span>
+                        </div>
+                    </div>
+                    <img src="sign.png" alt="Signature" class="heritage-sig">
                 </div>
-                <div class="about-image">
-                    <img src="https://images.unsplash.com/photo-1544787210-282713f8ca8a?q=80&w=800" alt="Tea Plantation" class="floating">
+                <div class="about-visual reveal-right">
+                    <div class="about-img-frame">
+                        <img src="bgimg.jpeg" alt="Tea Plantation" loading="lazy">
+                        <div class="img-badge">
+                            <span>Pure &amp;</span>
+                            <span>Natural</span>
+                        </div>
+                    </div>
+                    <div class="about-accent-card">
+                        <div class="accent-icon">🍃</div>
+                        <p>Every cup tells a story of mountains, mist &amp; morning dew.</p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="products" class="section-padding bg-alt">
+        <!-- PRODUCTS -->
+        <section id="products" class="section-padding products-section">
             <div class="container">
-                <div class="section-title reveal">
-                    <h2>Our Premium Selection</h2>
+                <div class="section-header reveal-up">
+                    <span class="eyebrow">Taste the Peaks</span>
+                    <h2>Our Premium<br><em>Selection</em></h2>
+                    <p class="section-sub">Handpicked teas from Nepal's high-altitude gardens,<br>crafted for rich flavor and calm mornings.</p>
                 </div>
                 <div class="product-grid">
-                    <div class="product-card reveal">
-                        <div class="card-icon">🍃</div>
-                        <h3>Orthodox Black</h3>
-                        <p>Rich, bold, and deep. A classic high-altitude experience.</p>
-                    </div>
-                    <div class="product-card reveal">
-                        <div class="card-icon">🌿</div>
-                        <h3>Himalayan Green</h3>
-                        <p>Fresh, light, and vibrant. Clean energy from the peaks.</p>
-                    </div>
-                    <div class="product-card reveal">
-                        <div class="card-icon">🌱</div>
-                        <h3>Oolong Tea</h3>
-                        <p>Floral and smooth. The perfect balance of oxidation.</p>
-                    </div>
-                    <div class="product-card reveal">
-                        <div class="card-icon">🤲</div>
-                        <h3>Hand-rolled</h3>
-                        <p>Specialty leaves rolled by hand for a unique character.</p>
-                    </div>
+                    <article class="product-card reveal-up" style="--delay:0.0s">
+                        <div class="card-img-wrap">
+                            <img src="products/black.png" alt="Orthodox Black Tea" loading="lazy">
+                            <div class="card-hover-overlay">
+                                <span>View Details →</span>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <span class="card-tag">Orthodox Black</span>
+                            <h3>Bold Himalayan Classic</h3>
+                            <p>Rich, dark leaves with full-bodied aroma and deep, satisfying notes.</p>
+                            <div class="card-footer">
+                                <div class="tea-meta">
+                                    <span class="meta-pill">Full Body</span>
+                                    <span class="meta-pill">Bold Aroma</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="product-card reveal-up" style="--delay:0.1s">
+                        <div class="card-img-wrap">
+                            <img src="products/green.png" alt="Himalayan Green Tea" loading="lazy">
+                            <div class="card-hover-overlay">
+                                <span>View Details →</span>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <span class="card-tag">Himalayan Green</span>
+                            <h3>Fresh Peak Harvest</h3>
+                            <p>Crisp, floral, and energizing with a clean finish from mountain-grown leaves.</p>
+                            <div class="card-footer">
+                                <div class="tea-meta">
+                                    <span class="meta-pill">Floral Notes</span>
+                                    <span class="meta-pill">Light Body</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="product-card reveal-up" style="--delay:0.2s">
+                        <div class="card-img-wrap">
+                            <img src="products/oolong.png" alt="Oolong Tea" loading="lazy">
+                            <div class="card-hover-overlay">
+                                <span>View Details →</span>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <span class="card-tag">Oolong Tea</span>
+                            <h3>Floral Balance</h3>
+                            <p>Semi-oxidized luxury with a silky texture and subtle orchard notes.</p>
+                            <div class="card-footer">
+                                <div class="tea-meta">
+                                    <span class="meta-pill">Silky</span>
+                                    <span class="meta-pill">Orchard Notes</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="product-card reveal-up" style="--delay:0.3s">
+                        <div class="card-img-wrap">
+                            <img src="products/handy.png" alt="Hand-rolled Tea" loading="lazy">
+                            <div class="card-hover-overlay">
+                                <span>View Details →</span>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <span class="card-tag">Hand-Rolled</span>
+                            <h3>Artisan Crafted</h3>
+                            <p>Small-batch leaves rolled by hand for a unique, fragrant experience.</p>
+                            <div class="card-footer">
+                                <div class="tea-meta">
+                                    <span class="meta-pill">Small Batch</span>
+                                    <span class="meta-pill">Artisan</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
                 </div>
             </div>
         </section>
 
+        <!-- STORY BANNER -->
+        <section class="story-banner">
+            <div class="story-banner-bg">
+                <img src="bgimg.jpeg" alt="" loading="lazy">
+                <div class="story-banner-overlay"></div>
+            </div>
+            <div class="container story-banner-content reveal-up">
+                <span class="eyebrow eyebrow-light">The Above2000m Promise</span>
+                <h2>From mountain mist<br><em>to your morning cup.</em></h2>
+                <a href="#contact" class="btn btn-outline-white">Get in Touch</a>
+            </div>
+        </section>
+
+        <!-- LEADERSHIP -->
         <section id="leadership" class="section-padding">
             <div class="container">
-                <div class="section-title reveal">
-                    <h2>Leadership</h2>
+                <div class="section-header reveal-up">
+                    <span class="eyebrow">The Minds Behind</span>
+                    <h2>Our <em>Leadership</em></h2>
                 </div>
                 <div class="leadership-grid">
-                    <div class="profile-card reveal">
-                        <div class="img-frame"><img src="founder.png" alt="Basudev Khatiwada"></div>
-                        <h3>Basudev Khatiwada</h3>
-                        <p class="role">Founder</p>
+                    <div class="profile-card reveal-up" style="--delay:0s">
+                        <div class="profile-img-wrap">
+                            <img src="founder.png" alt="Basudev Khatiwada" loading="lazy">
+                            <div class="profile-ring"></div>
+                        </div>
+                        <div class="profile-info">
+                            <h3>Basudev Khatiwada</h3>
+                            <span class="role-tag">Founder</span>
+                        </div>
                     </div>
-                    <div class="profile-card reveal">
-                        <div class="img-frame"><img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=300" alt="Tanka Kumar Khatiwada"></div>
-                        <h3>Tanka Kumar Khatiwada</h3>
-                        <p class="role">Director</p>
+                    <div class="profile-card reveal-up" style="--delay:0.1s">
+                        <div class="profile-img-wrap">
+                            <img src="tanka.jpg" alt="Tanka Kumar Khatiwada" loading="lazy">
+                            <div class="profile-ring"></div>
+                        </div>
+                        <div class="profile-info">
+                            <h3>Tanka Kumar Khatiwada</h3>
+                            <span class="role-tag">Director</span>
+                        </div>
                     </div>
-                    <div class="profile-card reveal">
-                        <div class="img-frame"><img src="itmanager.png" alt="Aashutosh Khatiwada"></div>
-                        <h3>Aashutosh Khatiwada</h3>
-                        <p class="role">IT Manager</p>
+                    <div class="profile-card reveal-up" style="--delay:0.2s">
+                        <div class="profile-img-wrap">
+                            <img src="itmanager.png" alt="Aashutosh Khatiwada" loading="lazy">
+                            <div class="profile-ring"></div>
+                        </div>
+                        <div class="profile-info">
+                            <h3>Aashutosh Khatiwada</h3>
+                            <span class="role-tag">IT Manager</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="contact" class="section-padding container">
-            <div class="contact-wrapper reveal">
-                <div class="contact-info">
-                    <h2>Connect with Us</h2>
-                    <ul class="contact-details">
-                        <li><strong>📞</strong> 9762959760</li>
-                        <li><strong>✉️</strong> above2000meters@gmail.com</li>
-                        <li><strong>📍</strong> 2W2M+332, 57300, Nepal</li>
+        <!-- CONTACT -->
+        <section id="contact" class="section-padding contact-section">
+            <div class="container contact-grid">
+                <div class="contact-info reveal-left">
+                    <span class="eyebrow">Get in Touch</span>
+                    <h2>Let's Connect<br><em>Over Tea.</em></h2>
+                    <ul class="contact-list">
+                        <li>
+                            <div class="contact-icon">📞</div>
+                            <div>
+                                <span class="contact-label">Phone</span>
+                                <a href="tel:9762959760">9762959760</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="contact-icon">✉️</div>
+                            <div>
+                                <span class="contact-label">Email</span>
+                                <a href="mailto:above2000meters@gmail.com">above2000meters@gmail.com</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="contact-icon">📍</div>
+                            <div>
+                                <span class="contact-label">Location</span>
+                                <span>Ilam Municipality-2, Nepal</span>
+                            </div>
+                        </li>
                     </ul>
                     <div class="map-container">
-                        <iframe src="https://www.google.com/maps?q=2W2M%2B332%2C%2057300&output=embed" width="100%" height="200" style="border:0; filter: grayscale(100%) invert(90%);"></iframe>
+                        <iframe src="https://www.google.com/maps?q=2W2M%2B332%2C%2057300&output=embed" width="100%" height="180" style="border:0;" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                 </div>
-                <form id="contact-form" class="glass-form">
-                    <div class="input-group">
-<input type="text" name="name" id="name" placeholder="Name" required>
-<input type="email" name="email" id="email" placeholder="Email" required>
+                <form id="contact-form" class="contact-form reveal-right" novalidate>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" name="name" id="name" placeholder="Your name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" name="email" id="email" placeholder="you@email.com" required>
+                        </div>
                     </div>
-<input type="text" name="subject" id="subject" placeholder="Subject" required>
-<textarea name="message" id="message" rows="5" placeholder="Your message..." required></textarea>
-                    <button type="submit" class="btn btn-primary">Send Message</button>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" name="subject" id="subject" placeholder="What's this about?" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea name="message" id="message" rows="5" placeholder="Tell us about yourself or your inquiry…" required></textarea>
+                    </div>
+                    <div class="form-group captcha-group">
+                        <label for="captcha-answer" id="captcha-label">Human check: What is 1 + 1?</label>
+                        <input type="text" name="captcha-answer" id="captcha-answer" placeholder="Your answer" required autocomplete="off">
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full">
+                        <span class="btn-text">Send Message</span>
+                        <span class="btn-icon">→</span>
+                    </button>
                     <div id="contact-feedback" class="contact-feedback" aria-live="polite"></div>
                 </form>
             </div>
@@ -145,15 +350,44 @@
     </main>
 
     <footer>
-        <div class="container footer-grid">
-            <img src="AboveLogo.svg" alt="Logo" height="40">
-            <p>© 2026 Above2000m Tea Products Pvt Ltd.</p>
+        <div class="container footer-inner">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <img src="AboveLogo.svg" alt="Above2000m Logo" height="48">
+                    <p>Above2000m brings Himalayan tea from mountain gardens to thoughtful drinkers around the world.</p>
+                    <div class="footer-social">
+                        <a href="#" class="social-pill">Facebook</a>
+                        <a href="#" class="social-pill">Instagram</a>
+                    </div>
+                </div>
+                <div class="footer-nav-col">
+                    <h4>Explore</h4>
+                    <ul>
+                        <li><a href="#hero">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#products">Products</a></li>
+                        <li><a href="#leadership">Leadership</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-nav-col">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li>📞 9762959760</li>
+                        <li>✉️ above2000meters@gmail.com</li>
+                        <li>📍 Ilam Municipality-2, Nepal</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> Above2000m Tea Products Pvt. Ltd. All rights reserved.</p>
+                <p class="footer-tagline">Crafted with 🍃 in the Himalayas</p>
+            </div>
         </div>
     </footer>
 
-    <!-- EmailJS CDN -->
     <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
     <script src="script.js"></script>
+    <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
 </body>
-
 </html>
