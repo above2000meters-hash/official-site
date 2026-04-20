@@ -817,6 +817,9 @@ footer {
     color: var(--green-light);
     background: rgba(74,158,96,0.08);
 }
+.social-icon {
+    filter: invert(1) brightness(2);
+}   
 .footer-attribution {
     margin: 14px 0 0;
     font-size: 0.72rem;
